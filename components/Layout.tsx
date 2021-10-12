@@ -1,8 +1,9 @@
 import {LayoutProps} from "@utils/commonProps"
 import Head from 'next/head'
-import Navbar from "@components/Navbar"
+import dynamic from "next/dynamic"
 
 const Layout = ({currentPage, children}: LayoutProps) => {
+  const Navbar = dynamic(() => import("@components/Navbar"), {ssr: false})
   return (
     <div>
       <Head>
@@ -11,7 +12,9 @@ const Layout = ({currentPage, children}: LayoutProps) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      {children}
+      <main className="w-4/5 mx-auto">
+        {children}
+      </main>
     </div>
   )
 }

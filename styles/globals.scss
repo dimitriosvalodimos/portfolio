@@ -4,6 +4,9 @@
 
 @layer utilities {
   .hoverable {
-    @apply transition duration-200 hover:bg-gray-100 dark:hover:bg-gray-600;
+    @apply hover:bg-gray-100 dark:hover:bg-gray-600;
+  }
+  .default-text {
+    @apply text-gray-800 dark:text-gray-50;
   }
 }
