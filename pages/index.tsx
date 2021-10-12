@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <Layout currentPage="Home">
       <Profile />
-      <p className="text-gray-800 dark:text-gray-50">Aliquam suscipit. Duis leo est, interdum nec, varius in, facilisis
+      <p className="default-text mt-8">Aliquam suscipit. Duis leo est, interdum nec, varius in, facilisis
       vitae, odio. Phasellus eget leo at urna adipiscing vulputate. Nam eu erat
       vel arcu tristique mattis. Nullam placerat lorem non augue. Cras et
       velit. Morbi sapien nulla, volutpat a, tristique eu, molestie ac, felis.
