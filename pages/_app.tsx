@@ -1,11 +1,14 @@
 import '@styles/globals.scss'
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from "next-themes"
+import { AnimatePresence } from 'framer-motion'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" >
-      <Component {...pageProps} />
+    <ThemeProvider attribute="class" defaultTheme="system">
+      <AnimatePresence exitBeforeEnter initial={false} onExitComplete={() => window.scrollTo(0,0)}>
+        <Component {...pageProps} key={router.route}/>
+      </AnimatePresence>
     </ThemeProvider>
   )
 }
