@@ -4,7 +4,7 @@
 
 @layer utilities {
   .hoverable {
-    @apply hover:bg-gray-100 dark:hover:bg-gray-600;
+    @apply hover:bg-gray-200 dark:hover:bg-gray-600;
   }
   .default-text {
     @apply text-gray-800 dark:text-gray-50;
