@@ -5,4 +5,11 @@ type LayoutProps = {
   children: ReactNode | ReactNode[];
 }
 
-export type {LayoutProps};
+type ProjectCardProps = {
+  name: string;
+  description: string;
+  linkTo: string;
+  stack: string | string[];
+}
+
+export type {LayoutProps, ProjectCardProps};

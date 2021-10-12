@@ -8,13 +8,13 @@ const ThemeSwitcher = () => {
     if (theme === "dark") setTheme("light");
   };
   return (
-    <span className="p-1 sm:p-4 hoverable" onClick={() => toggleTheme()}>
+    <button className="p-1 sm:p-4 hoverable" onClick={() => toggleTheme()}>
       {theme === "light" ? (
         <HiMoon className="hoverable default-text text-2xl" />
       ) : (
         <HiSun className="hoverable default-text text-2xl" />
       )}
-    </span>
+    </button>
   );
 };
 
