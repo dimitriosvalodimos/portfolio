@@ -14,4 +14,7 @@
   .default-text {
     @apply text-gray-800 dark:text-gray-50;
   }
+  .default-bg {
+    @apply bg-gray-50 dark:bg-gray-700;
+  }
 }

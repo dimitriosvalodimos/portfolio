@@ -6,6 +6,7 @@ type LayoutProps = {
 };
 
 type ProjectCardProps = {
+  cardNumber: number;
   name: string;
   description: string;
   category: string;
