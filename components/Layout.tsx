@@ -12,6 +12,7 @@ const variants = {
 const Layout = ({ currentPage, children }: LayoutProps) => {
   return (
     <motion.main
+      className="mx-auto"
       variants={variants}
       initial="hidden"
       animate="enter"

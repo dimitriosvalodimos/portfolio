@@ -10,6 +10,11 @@ const Profile = () => {
   };
   return (
     <section className="mt-8 flex flex-col sm:flex-row sm:justify-center sm:items-center text-center">
+      <div className="mb-8 sm:mr-8 md:mr-32">
+        <h1 className="text-xl font-semibold">Hi there 👋!</h1>
+        <h1 className="text-xl font-semibold">I'm Dimitrios</h1>
+        <h1 className="text-xl font-semibold">...but Dimi is enough 😉</h1>
+      </div>
       <div>
         <Image
           src={profilePic}
