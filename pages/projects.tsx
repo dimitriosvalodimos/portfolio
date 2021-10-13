@@ -1,12 +1,11 @@
 import Layout from "@components/Layout";
 import ProjectCard from "@components/ProjectCard";
-import link from "next/link";
 
 const Projects = () => {
   return (
     <Layout currentPage="Projects">
       <h1 className="default-text font-semibold text-2xl">Projects</h1>
-      <div className="flex-col">
+      <div className="flex-col flex-wrap sm:flex-row max-w-xs justify-evenly">
         <ProjectCard
           name="Todos"
           description="Simple Todo App with saving to localStorage and using Zustand for very easy access to the data."
