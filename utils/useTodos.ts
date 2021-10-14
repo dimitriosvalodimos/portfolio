@@ -1,14 +1,28 @@
-import create, { UseStore } from "zustand";
+import create from "zustand";
 import { TodoStore, Todo } from "@utils/commonProps";
+import { v4 as uuidv4 } from "uuid";
 
-const useTodos: UseStore<TodoStore> = create((set, get) => ({
+const useTodos = create<TodoStore>((set) => ({
   todos: [],
-  addTodo: (todo) => set((state) => ({ todos: [...state.todos, todo] })),
-  getTodo: (index) => get().todos[index],
-  removeTodo: (index) =>
+  setTodos: (localStorageTodos) => {
+    set((state) => ({ todos: [...localStorageTodos] }));
+  },
+  addTodo: (text) => {
     set((state) => ({
-      todos: state.todos.filter((_, idx) => index !== idx),
-    })),
+      todos: [...state.todos, { id: uuidv4(), text, done: false } as Todo],
+    }));
+  },
+  removeTodo: (id) => {
+    set((state) => ({
+      todos: state.todos.filter((todo) => todo.id !== id),
+    }));
+  },
+  toggleDone: (id) => {
+    set((state) => ({
+      todos: state.todos.map((todo) =>
+        todo.id === id ? ({ ...todo, done: !todo.done } as Todo) : todo
+      ),
+    }));
+  },
 }));
-
 export { useTodos };

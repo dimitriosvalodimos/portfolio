@@ -10,20 +10,33 @@ type ProjectCardProps = {
 };
 
 type Todo = {
+  id: string;
   text: string;
   done: boolean;
 };
 
-type TodoItemProps = {
-  data: Todo;
-  todoNumber: number;
-};
-
 type TodoStore = {
   todos: Todo[];
-  addTodo: (todo: Todo) => void;
-  getTodo: (index: number) => Todo;
-  removeTodo: (index: number) => void;
+  setTodos: (todos: Todo[]) => void;
+  addTodo: (text: string) => void;
+  removeTodo: (id: string) => void;
+  toggleDone: (id: string) => void;
 };
 
-export type { LayoutProps, ProjectCardProps, Todo, TodoItemProps, TodoStore };
+type LocalStorageStore = {
+  allowLocalStorageAccess: boolean;
+  changeAccess: (to: boolean) => void;
+};
+
+type TodoModalProps = {
+  close: () => void;
+};
+
+export type {
+  LayoutProps,
+  ProjectCardProps,
+  Todo,
+  TodoStore,
+  LocalStorageStore,
+  TodoModalProps,
+};

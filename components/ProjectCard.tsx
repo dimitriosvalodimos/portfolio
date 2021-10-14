@@ -9,7 +9,7 @@ const ProjectCard = ({ cardNumber }: ProjectCardProps) => {
     state.getCardAt(cardNumber)
   );
   return (
-    <motion.div className="max-w-xs p-4 m-4 border default-border rounded-xl shadow-lg hover:scale-105 transition duration-200 cursor-pointer default-bg">
+    <motion.div className="max-w-xs p-4 m-4 border default-border rounded-xl shadow-lg hover:scale-105 default-transition cursor-pointer default-bg">
       <h1 className="text-sm font-semibold text-gray-500 mb-2">{category}</h1>
       <h1 className="text-xl font-semibold default-text mb-4">{name}</h1>
       <p>{description}</p>

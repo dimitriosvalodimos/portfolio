@@ -8,7 +8,7 @@ const ExpandedCard = ({ card }: { card: number }) => {
   return (
     <motion.div
       onClick={() => resetCard(-1)}
-      className="max-w-xs p-4 m-4 border border-gray-100 dark:border-gray-600 rounded-xl shadow-lg hover:scale-105 transition duration-200 cursor-pointer default-bg"
+      className="max-w-xs p-4 m-4 border border-gray-100 dark:border-gray-600 rounded-xl shadow-lg hover:scale-105 default-transition cursor-pointer default-bg"
     >
       <div className="flex justify-between">
         <h1 className="text-xl font-semibold default-text my-1">
