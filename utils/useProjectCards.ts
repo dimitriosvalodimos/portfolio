@@ -12,9 +12,10 @@ type CardObj = {
   cardData: CardData[];
   currentCard: number;
   setCard: (newCard: number) => void;
+  getCardAt: (index: number) => CardData;
 };
 
-const useCards: UseStore<CardObj> = create((set) => ({
+const useCards: UseStore<CardObj> = create((set, get) => ({
   cardData: [
     {
       name: "Todos",
@@ -22,7 +23,7 @@ const useCards: UseStore<CardObj> = create((set) => ({
         "Simple Todo App with saving to localStorage and using Zustand for very easy access to the data.",
       category: "Web",
       linkTo: "/todos",
-      stack: ["Next.js", "TailwindCSS", "Typescript", "Zustand"],
+      stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
     },
     {
       name: "Todos",
@@ -30,7 +31,7 @@ const useCards: UseStore<CardObj> = create((set) => ({
         "Simple Todo App with saving to localStorage and using Zustand for very easy access to the data.",
       category: "Web",
       linkTo: "/todos",
-      stack: ["Next.js", "TailwindCSS", "Typescript", "Zustand"],
+      stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
     },
     {
       name: "Todos",
@@ -38,10 +39,11 @@ const useCards: UseStore<CardObj> = create((set) => ({
         "Simple Todo App with saving to localStorage and using Zustand for very easy access to the data.",
       category: "Web",
       linkTo: "/todos",
-      stack: ["Next.js", "TailwindCSS", "Typescript", "Zustand"],
+      stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
     },
   ],
   currentCard: -1,
+  getCardAt: (index: number) => get().cardData[index],
   setCard: (newCard) => set({ currentCard: newCard }),
 }));
 

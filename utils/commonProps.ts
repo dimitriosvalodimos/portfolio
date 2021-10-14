@@ -7,11 +7,23 @@ type LayoutProps = {
 
 type ProjectCardProps = {
   cardNumber: number;
-  name: string;
-  description: string;
-  category: string;
-  linkTo: string;
-  stack: string | string[];
 };
 
-export type { LayoutProps, ProjectCardProps };
+type Todo = {
+  text: string;
+  done: boolean;
+};
+
+type TodoItemProps = {
+  data: Todo;
+  todoNumber: number;
+};
+
+type TodoStore = {
+  todos: Todo[];
+  addTodo: (todo: Todo) => void;
+  getTodo: (index: number) => Todo;
+  removeTodo: (index: number) => void;
+};
+
+export type { LayoutProps, ProjectCardProps, Todo, TodoItemProps, TodoStore };
