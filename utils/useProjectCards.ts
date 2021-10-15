@@ -26,11 +26,11 @@ const useCards: UseStore<CardObj> = create((set, get) => ({
       stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
     },
     {
-      name: "Todos",
+      name: "Calculator",
       description:
-        "Simple Todo App with saving to localStorage and using Zustand for very easy access to the data.",
+        "A calculator without the security concerns! Very simple design but most of the time went into making a lexer and evaluator for the math expressions. No eval()",
       category: "Web",
-      linkTo: "/todos",
+      linkTo: "/calculator",
       stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
     },
     {

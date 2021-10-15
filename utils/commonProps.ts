@@ -32,6 +32,28 @@ type TodoModalProps = {
   close: () => void;
 };
 
+enum Operations {
+  PLUS = "+",
+  MINUS = "-",
+  MUL = "*",
+  DIV = "/",
+}
+
+type BinaryOps = Operations.PLUS | Operations.MUL | Operations.DIV;
+type UnaryOps = Operations.MINUS;
+
+type MathSymbol = number | BinaryOps | UnaryOps;
+
+type CalculatorStore = {
+  expression: MathSymbol[];
+  result: number;
+  appendToHistory: (value: number) => void;
+  resultHistory: MathSymbol[];
+  appendSymbol: (value: number | string) => void;
+  removeSymbol: () => void;
+  clearExpression: () => void;
+};
+
 export type {
   LayoutProps,
   ProjectCardProps,
@@ -39,4 +61,9 @@ export type {
   TodoStore,
   LocalStorageStore,
   TodoModalProps,
+  Operations,
+  BinaryOps,
+  UnaryOps,
+  MathSymbol,
+  CalculatorStore,
 };

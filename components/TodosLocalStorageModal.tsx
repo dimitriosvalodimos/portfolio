@@ -9,7 +9,7 @@ const TodosLocalStorageModal = ({ close }: TodoModalProps) => {
       initial={{ opacity: 0.5, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, x: "100%" }}
-      className="absolute default-bg"
+      className="absolute default-bg z-10"
     >
       <div className="my-8 mx-12 sm:my-16 sm:mx-32 text-center">
         <p>

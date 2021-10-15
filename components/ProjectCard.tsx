@@ -13,15 +13,13 @@ const ProjectCard = ({ cardNumber }: ProjectCardProps) => {
       <h1 className="text-sm font-semibold text-gray-500 mb-2">{category}</h1>
       <h1 className="text-xl font-semibold default-text mb-4">{name}</h1>
       <p>{description}</p>
-      <div className="my-4 text-right text-gray-400">
-        <p>{stack.join(", ")}</p>
-      </div>
-      <div className="flex w-full justify-center items-center">
+      <p className="my-4 text-right text-gray-400">{stack.join(", ")}</p>
+      <span className="flex justify-center">
         <Link href={linkTo}>
           <a className="default-link">Try it out!</a>
         </Link>
         <BsArrowRightShort className="ml-1 text-2xl default-link" />
-      </div>
+      </span>
     </motion.div>
   );
 };

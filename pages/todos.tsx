@@ -58,7 +58,8 @@ const Todos = () => {
           >
             <input
               type="text"
-              className="w-3/4 sm:w-1/2 shadow-lg rounded-lg bg-gray-100 hoverable dark:bg-gray-500 default-border default-transition py-2 px-4"
+              className="w-3/4 sm:w-1/2 shadow-lg rounded-lg bg-gray-100 hoverable dark:bg-gray-500 dark:placeholder-gray-300 default-border default-transition py-2 px-4"
+              placeholder="📝 Enter a new ToDo in here ..."
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
             />
@@ -66,44 +67,55 @@ const Todos = () => {
           <AnimateSharedLayout>
             <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
               <AnimatePresence>
-                {todos.map((todo, index) => {
-                  return (
-                    <motion.li
-                      key={todo.id}
-                      initial={{ opacity: 0, y: -50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{
-                        opacity: 0,
-                        x: "100%",
-                        transition: { duration: 0.2 },
-                      }}
-                      className={`flex rounded-lg justify-between hoverable items-center px-4 py-2 m-2 ${
-                        index % 2 == 0 ? "bg-gray-100 dark:bg-gray-500" : ""
-                      }`}
-                    >
-                      <input
-                        type="checkbox"
-                        className="text-black rounded focus:ring-1 focus:ring-black default-transition"
-                        checked={todo?.done}
-                        onChange={() => toggleDone(todo.id)}
-                      />
-                      <p
-                        className={`${
-                          todo?.done ? "line-through" : ""
-                        } mx-2 sm:mx-8`}
-                      >
-                        {todo?.text}
-                      </p>
-                      <button
-                        onClick={() => {
-                          removeTodo(todo.id);
+                {todos.length > 0 &&
+                  todos.map((todo, index) => {
+                    return (
+                      <motion.li
+                        key={todo.id}
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{
+                          opacity: 0,
+                          x: "100%",
+                          transition: { duration: 0.2 },
                         }}
+                        className={`flex rounded-lg justify-between hoverable items-center px-4 py-2 m-2 ${
+                          index % 2 == 0 ? "bg-gray-100 dark:bg-gray-500" : ""
+                        }`}
                       >
-                        <CgTrash className="text-2xl" />
-                      </button>
-                    </motion.li>
-                  );
-                })}
+                        <input
+                          type="checkbox"
+                          className="text-black rounded focus:ring-1 focus:ring-black default-transition"
+                          checked={todo?.done}
+                          onChange={() => toggleDone(todo.id)}
+                        />
+                        <p
+                          className={`${
+                            todo?.done ? "line-through" : ""
+                          } mx-2 sm:mx-8`}
+                        >
+                          {todo?.text}
+                        </p>
+                        <button
+                          onClick={() => {
+                            removeTodo(todo.id);
+                          }}
+                        >
+                          <CgTrash className="text-2xl" />
+                        </button>
+                      </motion.li>
+                    );
+                  })}
+                {todos.length === 0 && (
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { delay: 0.7 } }}
+                    exit={{ opacity: 0 }}
+                    className="text-center text-gray-400"
+                  >
+                    no ToDo's to see here 🤷
+                  </motion.p>
+                )}
               </AnimatePresence>
             </ul>
           </AnimateSharedLayout>
