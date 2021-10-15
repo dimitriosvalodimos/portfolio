@@ -4,12 +4,13 @@ import { useTodos } from "@utils/useTodos";
 import { useLocalStorage } from "@utils/useLocalStorage";
 import { FormEvent, useState, useEffect } from "react";
 import { CgTrash } from "react-icons/cg";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, AnimateSharedLayout } from "framer-motion";
 
 const Todos = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const { allowLocalStorageAccess } = useLocalStorage();
-  const { todos, addTodo, removeTodo, toggleDone, setTodos } = useTodos();
+  const { todos, addTodo, prepareRemove, removeTodo, toggleDone, setTodos } =
+    useTodos();
   const [inputText, setInputText] = useState("");
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const Todos = () => {
         }
       }
     }
-  }, []);
+  }, [allowLocalStorageAccess]);
 
   useEffect(() => {
     if (allowLocalStorageAccess) {
@@ -63,44 +64,50 @@ const Todos = () => {
               onChange={(e) => setInputText(e.target.value)}
             />
           </form>
-          <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
-            <AnimatePresence initial={false}>
-              {todos.map((todo, index) => {
-                return (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{
-                      opacity: 0,
-                      x: "100%",
-                      transition: { duration: 0.2 },
-                    }}
-                    className={`flex rounded-lg justify-between hoverable items-center px-4 py-2 m-2 ${
-                      index % 2 == 0 ? "bg-gray-100 dark:bg-gray-500" : ""
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      className="text-black rounded focus:ring-1 focus:ring-black default-transition"
-                      checked={todo?.done}
-                      onChange={() => toggleDone(todo.id)}
-                    />
-                    <p className={`${todo?.done ? "line-through" : ""}`}>
-                      {todo?.text}
-                    </p>
-                    <button
-                      onClick={() => {
-                        removeTodo(todo.id);
+          <AnimateSharedLayout>
+            <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
+              <AnimatePresence>
+                {todos.map((todo, index) => {
+                  return (
+                    <motion.li
+                      key={todo.id}
+                      initial={{ opacity: 0, y: -50 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{
+                        opacity: 0,
+                        x: "100%",
+                        transition: { duration: 0.2 },
                       }}
+                      className={`flex rounded-lg justify-between hoverable items-center px-4 py-2 m-2 ${
+                        index % 2 == 0 ? "bg-gray-100 dark:bg-gray-500" : ""
+                      }`}
                     >
-                      <CgTrash className="text-2xl" />
-                    </button>
-                  </motion.li>
-                );
-              })}
-            </AnimatePresence>
-          </ul>
+                      <input
+                        type="checkbox"
+                        className="text-black rounded focus:ring-1 focus:ring-black default-transition"
+                        checked={todo?.done}
+                        onChange={() => toggleDone(todo.id)}
+                      />
+                      <p
+                        className={`${
+                          todo?.done ? "line-through" : ""
+                        } mx-2 sm:mx-4`}
+                      >
+                        {todo?.text}
+                      </p>
+                      <button
+                        onClick={() => {
+                          removeTodo(todo.id);
+                        }}
+                      >
+                        <CgTrash className="text-2xl" />
+                      </button>
+                    </motion.li>
+                  );
+                })}
+              </AnimatePresence>
+            </ul>
+          </AnimateSharedLayout>
         </motion.div>
       </AnimatePresence>
     </Layout>
