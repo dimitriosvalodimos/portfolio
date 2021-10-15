@@ -9,8 +9,7 @@ import { AnimatePresence, motion, AnimateSharedLayout } from "framer-motion";
 const Todos = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const { allowLocalStorageAccess } = useLocalStorage();
-  const { todos, addTodo, prepareRemove, removeTodo, toggleDone, setTodos } =
-    useTodos();
+  const { todos, addTodo, removeTodo, toggleDone, setTodos } = useTodos();
   const [inputText, setInputText] = useState("");
 
   useEffect(() => {
