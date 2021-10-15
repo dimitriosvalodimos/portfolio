@@ -31,7 +31,10 @@ const Profile = () => {
           <li>{getAge()} years old</li>
           <li>
             B.Sc Informatics at{" "}
-            <Link href="https://www.inf.uni-hamburg.de/en/studies/bachelor/inf.html">
+            <Link
+              href="https://www.inf.uni-hamburg.de/en/studies/bachelor/inf.html"
+              prefetch={false}
+            >
               <a
                 className="default-link"
                 target="_blank"

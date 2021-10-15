@@ -15,7 +15,7 @@ const ProjectCard = ({ cardNumber }: ProjectCardProps) => {
       <p>{description}</p>
       <p className="my-4 text-right text-gray-400">{stack.join(", ")}</p>
       <span className="flex justify-center">
-        <Link href={linkTo}>
+        <Link href={linkTo} prefetch={false}>
           <a className="default-link">Try it out!</a>
         </Link>
         <BsArrowRightShort className="ml-1 text-2xl default-link" />
