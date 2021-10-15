@@ -90,7 +90,7 @@ const Todos = () => {
                       <p
                         className={`${
                           todo?.done ? "line-through" : ""
-                        } mx-2 sm:mx-4`}
+                        } mx-2 sm:mx-8`}
                       >
                         {todo?.text}
                       </p>
