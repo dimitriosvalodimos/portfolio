@@ -5,7 +5,7 @@ import { FormEvent, useState } from 'react';
 import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import { BiWind } from 'react-icons/bi';
 import { IoWater } from 'react-icons/io5';
-const weatherAPIKey = process.env.WEATHER_API_KEY;
+const weatherAPIKey = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
 
 enum RequestStatus {
   SUCCESS,
