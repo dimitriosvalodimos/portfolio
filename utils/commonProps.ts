@@ -1,4 +1,4 @@
-import { ReactNode, Dispatch, SetStateAction, FormEvent } from "react";
+import { ReactNode, Dispatch, SetStateAction, FormEvent } from 'react';
 
 type LayoutProps = {
   currentPage: string;
@@ -53,6 +53,38 @@ type InputbarProps = {
   children: ReactNode | ReactNode[];
 };
 
+type WeatherAPIResponseSuccess = {
+  cloud: number;
+  condition: string;
+  country: string;
+  daytime: boolean;
+  feels_like_c: number;
+  feels_like_f: number;
+  humidity: number;
+  icon_url: string;
+  latitude: number;
+  local_time: string;
+  location: string;
+  longitude: number;
+  region: string;
+  temp_c: number;
+  temp_f: number;
+  timezone: string;
+  wind_degree: number;
+  wind_direction: string;
+  wind_kph: number;
+  wind_mph: number;
+};
+
+type WeatherAPIResponseFailed = {
+  Id: string;
+  Code: number;
+  Detail: string;
+  Status: string;
+};
+
+type WeatherAPIResponse = WeatherAPIResponseSuccess | WeatherAPIResponseFailed;
+
 export type {
   LayoutProps,
   ProjectCardProps,
@@ -63,4 +95,7 @@ export type {
   LocalStorageStore,
   TodoModalProps,
   InputbarProps,
+  WeatherAPIResponse,
+  WeatherAPIResponseSuccess,
+  WeatherAPIResponseFailed
 };
