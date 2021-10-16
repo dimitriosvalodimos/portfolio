@@ -1,4 +1,5 @@
 import Layout from "@components/Layout";
+import Inputbar from "@components/Inputbar";
 import TodosLocalStorageModal from "@components/TodosLocalStorageModal";
 import { useTodos } from "@utils/useTodos";
 import { useLocalStorage } from "@utils/useLocalStorage";
@@ -51,19 +52,12 @@ const Todos = () => {
         )}
       </AnimatePresence>
       <AnimatePresence exitBeforeEnter>
-        <motion.div className="w-full mt-8 sm:mt-16">
-          <form
-            className="w-full flex justify-center items-center"
-            onSubmit={(e) => handleSubmission(e)}
-          >
-            <input
-              type="text"
-              className="w-3/4 sm:w-1/2 shadow-lg rounded-lg bg-gray-100 hoverable dark:bg-gray-500 dark:placeholder-gray-300 default-border default-transition py-2 px-4"
-              placeholder="📝 Enter a new ToDo in here ..."
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-            />
-          </form>
+        <Inputbar
+          inputText={inputText}
+          setInputText={setInputText}
+          handleSubmission={handleSubmission}
+          placeholderText="📝 Enter a new ToDo in here ..."
+        >
           <AnimateSharedLayout>
             <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
               <AnimatePresence>
@@ -119,7 +113,7 @@ const Todos = () => {
               </AnimatePresence>
             </ul>
           </AnimateSharedLayout>
-        </motion.div>
+        </Inputbar>
       </AnimatePresence>
     </Layout>
   );

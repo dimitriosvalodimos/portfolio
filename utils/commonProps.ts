@@ -1,8 +1,21 @@
-import { ReactNode } from "react";
+import { ReactNode, Dispatch, SetStateAction, FormEvent } from "react";
 
 type LayoutProps = {
   currentPage: string;
   children: ReactNode | ReactNode[];
+};
+
+type CardData = {
+  name: string;
+  description: string;
+  linkTo: string;
+  category: string;
+  stack: string[];
+};
+
+type CardStore = {
+  cardData: CardData[];
+  getCardAt: (index: number) => CardData;
 };
 
 type ProjectCardProps = {
@@ -32,38 +45,22 @@ type TodoModalProps = {
   close: () => void;
 };
 
-enum Operations {
-  PLUS = "+",
-  MINUS = "-",
-  MUL = "*",
-  DIV = "/",
-}
-
-type BinaryOps = Operations.PLUS | Operations.MUL | Operations.DIV;
-type UnaryOps = Operations.MINUS;
-
-type MathSymbol = number | BinaryOps | UnaryOps;
-
-type CalculatorStore = {
-  expression: MathSymbol[];
-  result: number;
-  appendToHistory: (value: number) => void;
-  resultHistory: MathSymbol[];
-  appendSymbol: (value: number | string) => void;
-  removeSymbol: () => void;
-  clearExpression: () => void;
+type InputbarProps = {
+  inputText: string;
+  setInputText: Dispatch<SetStateAction<string>>;
+  handleSubmission: (e: FormEvent<HTMLFormElement>) => void;
+  placeholderText: string;
+  children: ReactNode | ReactNode[];
 };
 
 export type {
   LayoutProps,
   ProjectCardProps,
+  CardData,
+  CardStore,
   Todo,
   TodoStore,
   LocalStorageStore,
   TodoModalProps,
-  Operations,
-  BinaryOps,
-  UnaryOps,
-  MathSymbol,
-  CalculatorStore,
+  InputbarProps,
 };
