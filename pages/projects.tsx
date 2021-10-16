@@ -5,7 +5,6 @@ import { useCards } from "@utils/useProjectCards";
 
 const Projects = () => {
   const cardData = useCards((state) => state.cardData);
-  // <div className="mt-8 sm:mt-16 flex flex-wrap justify-center gap-2">
   return (
     <Layout currentPage="Projects">
       <h1 className="default-text font-semibold text-4xl text-center mt-12">

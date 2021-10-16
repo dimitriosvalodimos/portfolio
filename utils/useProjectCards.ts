@@ -1,50 +1,51 @@
-import create, { UseStore } from "zustand";
+import create from "zustand";
+import { CardData, CardStore } from "@utils/commonProps";
 
-type CardData = {
-  name: string;
-  description: string;
-  linkTo: string;
-  category: string;
-  stack: string[];
-};
-
-type CardObj = {
-  cardData: CardData[];
-  currentCard: number;
-  setCard: (newCard: number) => void;
-  getCardAt: (index: number) => CardData;
-};
-
-const useCards: UseStore<CardObj> = create((set, get) => ({
+const useCards = create<CardStore>((set, get) => ({
   cardData: [
     {
+      name: "Portfolio",
+      description:
+        "The site your on right now! Since you're already here I'll spare you the link to the demo and give you the link to the GitHub repository.",
+      category: "Web",
+      linkTo: "https://github.com/dimitriosvalodimos/portfolio",
+      stack: [
+        "Next.js",
+        "TailwindCSS",
+        "Typescript",
+        "zustand",
+        "framer-motion",
+      ],
+    },
+    {
       name: "Todos",
       description:
         "Simple Todo App with saving to localStorage and using Zustand for very easy access to the data.",
       category: "Web",
       linkTo: "/todos",
-      stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
+      stack: [
+        "Next.js",
+        "TailwindCSS",
+        "Typescript",
+        "zustand",
+        "framer-motion",
+      ],
     },
     {
-      name: "Calculator",
-      description:
-        "A calculator without the security concerns! Very simple design but most of the time went into making a lexer and evaluator for the math expressions. No eval()",
+      name: "Weather",
+      description: "A simple weather app using Micro Weather API.",
       category: "Web",
-      linkTo: "/calculator",
-      stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
-    },
-    {
-      name: "Todos",
-      description:
-        "Simple Todo App with saving to localStorage and using Zustand for very easy access to the data.",
-      category: "Web",
-      linkTo: "/todos",
-      stack: ["Next.js", "Tailwind", "Typescript", "Zustand"],
+      linkTo: "/weather",
+      stack: [
+        "Next.js",
+        "TailwindCSS",
+        "Typescript",
+        "zustand",
+        "framer-motion",
+      ],
     },
   ],
-  currentCard: -1,
   getCardAt: (index: number) => get().cardData[index],
-  setCard: (newCard) => set({ currentCard: newCard }),
 }));
 
 export { useCards };
