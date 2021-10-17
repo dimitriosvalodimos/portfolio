@@ -1,7 +1,14 @@
-import "@styles/globals.scss";
-import type { AppProps } from "next/app";
-import { ThemeProvider } from "next-themes";
-import { AnimatePresence } from "framer-motion";
+import '@styles/globals.scss';
+import '@styles/nprogress.scss';
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
+import { AnimatePresence } from 'framer-motion';
+import Router from 'next/router';
+import nProgress from 'nprogress';
+
+Router.events.on('routeChangeStart', nProgress.start);
+Router.events.on('routeChangeError', nProgress.done);
+Router.events.on('routeChangeComplete', nProgress.done);
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
