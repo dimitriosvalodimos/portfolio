@@ -83,8 +83,33 @@ type WeatherAPIResponseFailed = {
   Status: string;
 };
 
-type WeatherAPIResponse = WeatherAPIResponseSuccess | WeatherAPIResponseFailed;
+type WeatherAPIResponseSuccessStamped = WeatherAPIResponseSuccess & {
+  timestamp: number;
+};
 
+type WeatherAPIResponse =
+  | WeatherAPIResponseSuccess
+  | WeatherAPIResponseSuccessStamped
+  | WeatherAPIResponseFailed;
+
+enum RequestStatus {
+  SUCCESS,
+  FAILED,
+  UNKNOWN
+}
+
+type WeatherCardProps = {
+  data: WeatherAPIResponseSuccessStamped;
+};
+
+type WeatherCacheStore = {
+  cachedResponses: WeatherAPIResponseSuccessStamped[];
+  addResponse: (value: WeatherAPIResponseSuccess) => void;
+  removeStaleEntries: () => void;
+  getEntry: (location: string) => WeatherAPIResponseSuccessStamped | undefined;
+};
+
+export { RequestStatus };
 export type {
   LayoutProps,
   ProjectCardProps,
@@ -97,5 +122,8 @@ export type {
   InputbarProps,
   WeatherAPIResponse,
   WeatherAPIResponseSuccess,
-  WeatherAPIResponseFailed
+  WeatherAPIResponseFailed,
+  WeatherAPIResponseSuccessStamped,
+  WeatherCacheStore,
+  WeatherCardProps
 };
