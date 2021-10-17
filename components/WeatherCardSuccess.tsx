@@ -20,7 +20,7 @@ const items = {
 const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
   const getLocalDate = (datetime: string) => {
     const date = datetime?.split(' ')[0];
-    const yearMonthDay = date.split('-');
+    const yearMonthDay = date?.split('-');
     return `${yearMonthDay[2]}.${yearMonthDay[1]}.${yearMonthDay[0]}`;
   };
   const getLocalTime = (datetime: string) => {

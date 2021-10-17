@@ -3,7 +3,6 @@ import Inputbar from '@components/Inputbar';
 import WeatherCardFailed from '@components/WeatherCardFailed';
 import WeatherCardSuccess from '@components/WeatherCardSuccess';
 import WeatherCardUnknown from '@components/WeatherCardUnknown';
-import dynamic from 'next/dynamic';
 import {
   WeatherAPIResponseFailed,
   WeatherAPIResponseSuccessStamped,
