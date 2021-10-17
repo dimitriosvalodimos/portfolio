@@ -20,7 +20,7 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
   return (
     <motion.div
       key={data?.location}
-      className="max-w-sm w-full grid grid-cols-2 items-center text-center bg-gray-100 default-text dark:bg-gray-500 shadow-lg rounded-lg p-3"
+      className="max-w-sm w-full grid grid-cols-2 items-center text-center bg-gray-100 default-text dark:bg-gray-500 shadow-lg rounded-lg p-3 hoverable default-transition"
       variants={container}
       initial="hidden"
       animate="show"

@@ -47,6 +47,7 @@ const Weather = () => {
   };
   return (
     <Layout currentPage="Weather">
+      <h1 className="text-center text-4xl font-bold mt-8 sm:mt-16">Weather</h1>
       <Inputbar
         inputText={inputText}
         setInputText={setInputText}

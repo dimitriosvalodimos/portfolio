@@ -59,7 +59,7 @@ const Todos = () => {
           placeholderText="📝 Enter a new ToDo in here ..."
         >
           <AnimateSharedLayout>
-            <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
+            <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 md:w-1/3 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
               <AnimatePresence>
                 {todos.length > 0 &&
                   todos.map((todo, index) => {
