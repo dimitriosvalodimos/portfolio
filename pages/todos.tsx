@@ -1,22 +1,22 @@
-import Layout from "@components/Layout";
-import Inputbar from "@components/Inputbar";
-import TodosLocalStorageModal from "@components/TodosLocalStorageModal";
-import { useTodos } from "@utils/useTodos";
-import { useLocalStorage } from "@utils/useLocalStorage";
-import { FormEvent, useState, useEffect } from "react";
-import { CgTrash } from "react-icons/cg";
-import { AnimatePresence, motion, AnimateSharedLayout } from "framer-motion";
+import Layout from '@components/Layout';
+import Inputbar from '@components/Inputbar';
+import TodosLocalStorageModal from '@components/TodosLocalStorageModal';
+import { useTodos } from '@utils/useTodos';
+import { useLocalStorage } from '@utils/useLocalStorage';
+import { FormEvent, useState, useEffect } from 'react';
+import { CgTrash } from 'react-icons/cg';
+import { AnimatePresence, motion, AnimateSharedLayout } from 'framer-motion';
 
 const Todos = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const { allowLocalStorageAccess } = useLocalStorage();
   const { todos, addTodo, removeTodo, toggleDone, setTodos } = useTodos();
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState('');
 
   useEffect(() => {
     if (allowLocalStorageAccess) {
       const localData = localStorage.getItem(
-        "dimitriosValodimosPortfolioTodos"
+        'dimitriosValodimosPortfolioTodos'
       );
       if (localData) {
         const data = JSON.parse(localData);
@@ -30,14 +30,14 @@ const Todos = () => {
   useEffect(() => {
     if (allowLocalStorageAccess) {
       const dataJson = JSON.stringify(todos);
-      localStorage.setItem("dimitriosValodimosPortfolioTodos", dataJson);
+      localStorage.setItem('dimitriosValodimosPortfolioTodos', dataJson);
     }
   }, [todos]);
 
   const handleSubmission = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     addTodo(inputText);
-    setInputText("");
+    setInputText('');
   };
 
   return (
@@ -46,7 +46,7 @@ const Todos = () => {
       <AnimatePresence exitBeforeEnter>
         {isModalOpen && (
           <TodosLocalStorageModal
-            key={"todoModal"}
+            key={'todoModal'}
             close={() => setIsModalOpen(false)}
           />
         )}
@@ -70,11 +70,11 @@ const Todos = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{
                           opacity: 0,
-                          x: "100%",
-                          transition: { duration: 0.2 },
+                          x: '100%',
+                          transition: { duration: 0.2 }
                         }}
                         className={`flex rounded-lg justify-between hoverable items-center px-4 py-2 m-2 ${
-                          index % 2 == 0 ? "bg-gray-100 dark:bg-gray-500" : ""
+                          index % 2 == 0 ? 'bg-gray-100 dark:bg-gray-500' : ''
                         }`}
                       >
                         <input
@@ -85,7 +85,7 @@ const Todos = () => {
                         />
                         <p
                           className={`${
-                            todo?.done ? "line-through" : ""
+                            todo?.done ? 'line-through' : ''
                           } mx-2 sm:mx-8`}
                         >
                           {todo?.text}
