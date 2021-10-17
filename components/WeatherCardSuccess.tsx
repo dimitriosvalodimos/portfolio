@@ -1,8 +1,7 @@
 import { WeatherCardProps } from '@utils/commonProps';
 import { motion } from 'framer-motion';
 import { BiWind } from 'react-icons/bi';
-import { BsFillClockFill } from 'react-icons/bs';
-import { IoWater, IoCalendarSharp } from 'react-icons/io5';
+import { IoWater } from 'react-icons/io5';
 import { GiWindsock } from 'react-icons/gi';
 
 const container = {
@@ -18,15 +17,6 @@ const items = {
 };
 
 const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
-  const getLocalDate = (datetime: string) => {
-    const date = datetime?.split(' ')[0];
-    const yearMonthDay = date?.split('-');
-    return `${yearMonthDay[2]}.${yearMonthDay[1]}.${yearMonthDay[0]}`;
-  };
-  const getLocalTime = (datetime: string) => {
-    return datetime?.split(' ')[1];
-  };
-
   return (
     <motion.div
       key={data?.location}
@@ -86,26 +76,6 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
       >
         <GiWindsock className="mr-1" />
         {data?.wind_direction}
-      </motion.span>
-      <motion.span
-        variants={items}
-        title={`The local date formatted as day.month.year, here: ${getLocalDate(
-          data?.local_time
-        )}`}
-        className="flex justify-center items-center"
-      >
-        <IoCalendarSharp className="mr-1" />
-        {getLocalDate(data?.local_time)}
-      </motion.span>
-      <motion.span
-        variants={items}
-        title={`The local time formatted as military time, here: ${getLocalTime(
-          data?.local_time
-        )}`}
-        className="flex justify-center items-center"
-      >
-        <BsFillClockFill className="mr-1" />
-        {getLocalTime(data?.local_time)}
       </motion.span>
     </motion.div>
   );
