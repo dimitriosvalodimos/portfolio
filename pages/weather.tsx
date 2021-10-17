@@ -126,7 +126,7 @@ const Weather = () => {
                           variants={items}
                         >
                           <BiWind />
-                          {responseContent?.wind_kph.toFixed(0)} km/h
+                          {responseContent?.wind_kph?.toFixed(0)} km/h
                         </motion.p>
                       </motion.div>
                     </motion.div>
@@ -135,8 +135,8 @@ const Weather = () => {
                         className="text-xs flex justify-center items-center"
                         variants={items}
                       >
-                        {responseContent?.latitude.toFixed(2)}'N,{' '}
-                        {responseContent?.longitude.toFixed(2)}'E
+                        {responseContent?.latitude?.toFixed(2)}'N,{' '}
+                        {responseContent?.longitude?.toFixed(2)}'E
                       </motion.p>
                     </motion.span>
                     <motion.p>{responseContent?.condition}</motion.p>
