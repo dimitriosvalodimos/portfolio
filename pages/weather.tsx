@@ -1,5 +1,8 @@
 import Layout from '@components/Layout';
 import Inputbar from '@components/Inputbar';
+import WeatherCardFailed from '@components/WeatherCardFailed';
+import WeatherCardSuccess from '@components/WeatherCardSuccess';
+import WeatherCardUnknown from '@components/WeatherCardUnknown';
 import dynamic from 'next/dynamic';
 import {
   WeatherAPIResponseFailed,
@@ -7,23 +10,10 @@ import {
   RequestStatus
 } from '@utils/commonProps';
 import { FormEvent, useState } from 'react';
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { fetchWeatherFor } from '@utils/weatherAPI';
 import { useWeatherCache } from '@utils/useWeatherCache';
 
 const Weather = () => {
-  const WeatherCardSuccess = dynamic(
-    () => import('@components/WeatherCardSuccess'),
-    { ssr: false }
-  );
-  const WeatherCardFailed = dynamic(
-    () => import('@components/WeatherCardFailed'),
-    { ssr: false }
-  );
-  const WeatherCardUnknown = dynamic(
-    () => import('@components/WeatherCardUnknown'),
-    { ssr: false }
-  );
   const { getEntry, addResponse } = useWeatherCache();
   const [inputText, setInputText] = useState('');
   const [requestStatus, setRequestStatus] = useState(RequestStatus.UNKNOWN);
