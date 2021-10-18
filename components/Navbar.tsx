@@ -22,11 +22,6 @@ const Navbar = () => {
             <a className="px-2 py-3">Projects</a>
           </Link>
         </li>
-        <li className="font-semibold text-lg default-text px-2 py-3 hoverable default-transition rounded-lg">
-          <Link href="/contact" prefetch={false}>
-            <a className="px-2 py-3">Contact</a>
-          </Link>
-        </li>
       </ul>
       <button
         className="p-1 sm:p-4 hoverable default-transition rounded-lg"
