@@ -22,17 +22,19 @@ const Navbar = () => {
             <a className="px-2 py-3">Projekte</a>
           </Link>
         </li>
+        <li>
+          <button
+            className="p-1 sm:p-4 hoverable default-transition rounded-lg"
+            onClick={() => toggleTheme()}
+          >
+            {theme === 'light' ? (
+              <HiMoon className="hoverable default-text text-2xl" />
+            ) : (
+              <HiSun className="hoverable default-text text-2xl" />
+            )}
+          </button>
+        </li>
       </ul>
-      <button
-        className="p-1 sm:p-4 hoverable default-transition rounded-lg"
-        onClick={() => toggleTheme()}
-      >
-        {theme === 'light' ? (
-          <HiMoon className="hoverable default-text text-2xl" />
-        ) : (
-          <HiSun className="hoverable default-text text-2xl" />
-        )}
-      </button>
     </nav>
   );
 };
