@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const ContactCard = () => {
   return (
-    <div className="place-self-center mb-8">
+    <div className="place-self-center xs:mb-8">
       <p className="font-semibold text-xl">Wo man mich findet:</p>
       <ul>
         <li className="flex justify-left items-center">
