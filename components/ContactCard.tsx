@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 const ContactCard = () => {
   return (
-    <div className="place-self-center xs:mb-8">
+    <div className="place-self-center xs:mb-8 leading-loose">
       <p className="font-semibold text-xl">Wo man mich findet:</p>
       <ul>
         <li className="flex justify-left items-center">
-          <ImGithub />
+          <ImGithub className="text-2xl" />
           <Link href="https://github.com/dimitriosvalodimos">
             <a
               className="ml-1 default-link"
@@ -20,7 +20,7 @@ const ContactCard = () => {
           </Link>
         </li>
         <li className="flex justify-left items-center">
-          <BsLinkedin />
+          <BsLinkedin className="text-2xl" />
           <Link href="https://www.linkedin.com/in/dimitrios-valodimos-5567431bb/">
             <a
               className="ml-1 default-link"
@@ -32,7 +32,7 @@ const ContactCard = () => {
           </Link>
         </li>
         <li className="flex justify-left items-center">
-          <ImXing />
+          <ImXing className="text-2xl" />
           <Link href="https://www.xing.com/profile/Dimitrios_Valodimos3/cv">
             <a className="ml-1 default-link" rel="noopener noreferrer">
               XING
