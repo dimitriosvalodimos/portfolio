@@ -8,7 +8,7 @@ const WeatherCardFailed = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, x: '100%' }}
     >
-      Tut mir leid, etwas scheint nicht ganz zu funktionieren. probiere es mit
+      Tut mir leid, etwas scheint nicht ganz zu funktionieren. Probiere es mit
       einer anderen Stadt nochmal.
     </motion.p>
   );
