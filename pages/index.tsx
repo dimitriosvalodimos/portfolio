@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import Layout from '@components/Layout';
 import { HiMail } from 'react-icons/hi';
 import { BsLinkedin } from 'react-icons/bs';
-import { ImXing } from 'react-icons/im';
+import { ImXing, ImGithub } from 'react-icons/im';
 import Link from 'next/link';
 
 const Home: NextPage = () => {
@@ -15,15 +15,16 @@ const Home: NextPage = () => {
         <p className="font-semibold text-xl">Wo man mich findet:</p>
         <ul>
           <li className="flex justify-left items-center">
-            <HiMail />
-            <span
-              className="ml-1 default-link"
-              onClick={(e) =>
-                window.open('mailto:dimitriosvalodimos@gmail.com')
-              }
-            >
-              dimitriosvalodimos@gmail.com
-            </span>
+            <ImGithub />
+            <Link href="https://github.com/dimitriosvalodimos">
+              <a
+                className="ml-1 default-link"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                dimitriosvalodimos
+              </a>
+            </Link>
           </li>
           <li className="flex justify-left items-center">
             <BsLinkedin />
