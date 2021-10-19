@@ -46,13 +46,13 @@ const Weather = () => {
     setInputText('');
   };
   return (
-    <Layout currentPage="Weather">
-      <h1 className="text-center text-4xl font-bold mt-8 sm:mt-16">Weather</h1>
+    <Layout currentPage="Wetter">
+      <h1 className="text-center text-4xl font-bold mt-8 sm:mt-16">Wetter</h1>
       <Inputbar
         inputText={inputText}
         setInputText={setInputText}
         handleSubmission={handleSubmission}
-        placeholderText="📍 Enter a city by name ..."
+        placeholderText="📍 Eine Stadt deiner Wahl ..."
       >
         <div className="flex mt-8 sm:mt-16 justify-center mx-8">
           {requestStatus === RequestStatus.UNKNOWN && <WeatherCardUnknown />}

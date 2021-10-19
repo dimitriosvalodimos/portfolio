@@ -14,14 +14,19 @@ const TodosLocalStorageModal = ({ close }: TodoModalProps) => {
       >
         <div className="my-8 mx-12 sm:my-16 sm:mx-32 text-center">
           <p>
-            This small ToDo-App can use the browsers localStorage API to make
-            your todo-items persist across browser sessions. So I wanted to ask
-            permission.
+            Das ist eine kleine ToDo-App, die deine Einträge im localStorage
+            speichern kann. Somit brauchst du dich nicht anmelden, um deine
+            Einträge beim nächsten Besuch wieder zu finden. Daher wollte ich nur
+            kurz um Erlaubnis bitten, die Einträge in deinem Browser speichern
+            zu dürfen.
           </p>
           <hr className="w-1/2 mx-auto my-4" />
           <p>
-            Of course it will be fully functional without localStorage. It just
-            adds a little bonus of persistance across browser sessions.
+            Selbstverständlich ist die App auch ohne localStorage 100% nutzbar,
+            nur würden deine Einträge beim neuladen der Seite verloren gehen.
+            Zum testen musst du also nicht zustimmen. Zum ernsthaften Nutzen
+            aber vielleicht schon (würde aber davon abraten, da es viel bessere
+            Alternativen gibt).
           </p>
           <button
             onClick={() => {
@@ -30,7 +35,7 @@ const TodosLocalStorageModal = ({ close }: TodoModalProps) => {
             }}
             className="p-2 default-button"
           >
-            allow localStorage use
+            <span className="font-bold">erlaube</span> lokales speichern
           </button>
           <button
             onClick={() => {
@@ -39,7 +44,7 @@ const TodosLocalStorageModal = ({ close }: TodoModalProps) => {
             }}
             className="p-2 default-button"
           >
-            don't allow localStorage use
+            <span className="font-bold">verbiete</span> lokales speichern
           </button>
         </div>
       </motion.div>

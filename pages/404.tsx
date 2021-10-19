@@ -1,7 +1,7 @@
-import Layout from "@components/Layout";
-import Link from "next/link";
-import Image from "next/image";
-import image404 from "../public/images/Caution_Tape-big.png";
+import Layout from '@components/Layout';
+import Link from 'next/link';
+import Image from 'next/image';
+import image404 from '../public/images/Caution_Tape-big.png';
 
 const FourOhFour = () => {
   return (
@@ -13,7 +13,7 @@ const FourOhFour = () => {
         <div className="w-full p-8 md:w-1/2">
           <h1 className="font-semibold text-2xl">404 - Page not Found</h1>
           <Link href="/" prefetch={false}>
-            <a className="default-link block">Go back home</a>
+            <a className="default-link block">Hier geht's zurück!</a>
           </Link>
         </div>
       </div>

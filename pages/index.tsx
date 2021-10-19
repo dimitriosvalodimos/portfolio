@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <Layout currentPage="Home">
       <Profile />
       <div className="sm:grid sm:justify-center mt-8 pl-8 text-left mb-8">
-        <p className="font-semibold text-xl">Contact Me:</p>
+        <p className="font-semibold text-xl">Wo man mich findet:</p>
         <ul>
           <li className="flex justify-left items-center">
             <HiMail />
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn Profile
+                LinkedIn
               </a>
             </Link>
           </li>
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
             <ImXing />
             <Link href="https://www.xing.com/profile/Dimitrios_Valodimos3/cv">
               <a className="ml-1 default-link" rel="noopener noreferrer">
-                XING Profile
+                XING
               </a>
             </Link>
           </li>

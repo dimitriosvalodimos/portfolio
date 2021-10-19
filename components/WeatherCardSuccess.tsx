@@ -17,6 +17,9 @@ const items = {
 };
 
 const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
+  const englishCardinalsToGerman = (direction: string) => {
+    return direction.replaceAll('E', 'O');
+  };
   return (
     <motion.div
       key={data?.location}
@@ -31,7 +34,7 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
         <motion.span
           variants={items}
           className="text-xs font-light"
-          title={`Coordinates in Latitude and Longitude, here: ${data?.latitude}°N, ${data?.longitude}°E`}
+          title={`Koordinaten in Längen- und Breitengraden, hier: ${data?.latitude}°N, ${data?.longitude}°O`}
         >
           {data?.latitude}, {data?.longitude}
         </motion.span>
@@ -41,7 +44,7 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
         variants={items}
       >
         <motion.img
-          title={`Icon provided by the Weather API "https://m3o.com/weather/api"`}
+          title={`Icon bereitgestellt durch die Wetter API "https://m3o.com/weather/api"`}
           variants={items}
           src={data?.icon_url}
         />
@@ -50,20 +53,20 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
       <motion.span
         className="flex items-center justify-center"
         variants={items}
-        title={`Humidity, here: ${data?.humidity}%`}
+        title={`Luftfeuchtigkeit, hier: ${data?.humidity}%`}
       >
         <IoWater className="mr-1" />
         {data?.humidity}%
       </motion.span>
       <motion.span
         variants={items}
-        title={`Given the humidity, temperature, wind and a few other factors this value can sometimes actually be a better indicator of temperature than the true value, here: ${data?.feels_like_c}°C`}
+        title={`Je nach Luftfeuchtigkeit, Temperatur, Windstärke und anderen Faktoren kann dieser Wert in einigen Fällen wichtiger als der reine Temperaturwert sein. Ein Beispiel wäre bei sehr hohen Temperaturen und Luftfeuchtigkeit kann es dazu kommen, dass der Körper den produzierten Schweiß nicht verdunsten und somit deine Körpertemperatur nicht senken kann. Das würde im schlimmsten Fall zu einem Hitzschlag führen. Hier: ${data?.feels_like_c}°C`}
       >
-        feels like {data?.feels_like_c}°C
+        gefühlt {data?.feels_like_c}°C
       </motion.span>
       <motion.span
         className="flex justify-center items-center"
-        title={`The wind speed given in kilometers per hour, here: ${data?.wind_kph} km/h`}
+        title={`Die Windgeschwindigkeit in km/h, hier: ${data?.wind_kph} km/h`}
         variants={items}
       >
         <BiWind className="mr-1" />
@@ -71,11 +74,11 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
       </motion.span>
       <motion.span
         variants={items}
-        title={`The wind direction given in in cardinal values, here: ${data?.wind_direction}`}
+        title={`Die Windrichtung als Himmelsrichtung angegeben, hier: ${data?.wind_direction}`}
         className="flex justify-center items-center"
       >
         <GiWindsock className="mr-1" />
-        {data?.wind_direction}
+        {data?.wind_direction?.replaceAll('E', 'O')}
       </motion.span>
     </motion.div>
   );

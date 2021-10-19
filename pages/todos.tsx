@@ -56,7 +56,7 @@ const Todos = () => {
           inputText={inputText}
           setInputText={setInputText}
           handleSubmission={handleSubmission}
-          placeholderText="📝 Enter a new ToDo in here ..."
+          placeholderText="📝 Füge ein neues ToDo hier ein ..."
         >
           <AnimateSharedLayout>
             <ul className="flex-col justify-center items-center mx-auto w-3/4 sm:w-1/2 md:w-1/3 mt-8 sm:mt-16 overflow-x-hidden overflow-y-hidden">
@@ -107,7 +107,7 @@ const Todos = () => {
                     exit={{ opacity: 0 }}
                     className="text-center text-gray-400"
                   >
-                    no ToDo's to see here 🤷
+                    hier gibt's nichts zu sehen 🤷
                   </motion.p>
                 )}
               </AnimatePresence>

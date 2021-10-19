@@ -19,7 +19,7 @@ const Navbar = () => {
         </li>
         <li className="font-semibold text-lg default-text px-2 py-3 hoverable default-transition rounded-lg">
           <Link href="/projects" prefetch={false}>
-            <a className="px-2 py-3">Projects</a>
+            <a className="px-2 py-3">Projekte</a>
           </Link>
         </li>
       </ul>
