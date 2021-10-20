@@ -108,7 +108,7 @@ const Todos = () => {
                     exit={{ opacity: 0 }}
                     className="text-center text-gray-400"
                   >
-                    hier gibt's nichts zu sehen 🤷
+                    hier gibt&apos;s nichts zu sehen 🤷
                   </motion.p>
                 )}
               </AnimatePresence>

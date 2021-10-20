@@ -18,7 +18,7 @@ const FourOhFour = () => {
         <div className="w-full p-8 md:w-1/2">
           <h1 className="font-semibold text-2xl">404 - Page not Found</h1>
           <Link href="/" prefetch={false}>
-            <a className="default-link block">Hier geht's zurück!</a>
+            <a className="default-link block">Hier geht&apos;s zurück!</a>
           </Link>
         </div>
       </div>

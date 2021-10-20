@@ -17,9 +17,6 @@ const items = {
 };
 
 const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
-  const englishCardinalsToGerman = (direction: string) => {
-    return direction.replaceAll('E', 'O');
-  };
   return (
     <motion.div
       key={data?.location}
