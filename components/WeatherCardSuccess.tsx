@@ -44,6 +44,7 @@ const WeatherCardSuccess = ({ data }: WeatherCardProps) => {
         variants={items}
       >
         <motion.img
+          alt="Kleines Wettersymbol, da es durch den Wetter Anbieter mitgeschickt wird, kann ich keine weitere Auskunft über das jetzige Bild geben"
           title={`Icon bereitgestellt durch die Wetter API "https://m3o.com/weather/api"`}
           variants={items}
           src={data?.icon_url}
