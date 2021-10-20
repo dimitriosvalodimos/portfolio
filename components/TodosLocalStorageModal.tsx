@@ -29,6 +29,7 @@ const TodosLocalStorageModal = ({ close }: TodoModalProps) => {
             Alternativen gibt).
           </p>
           <button
+            aria-label="erlaube lokales speichern"
             onClick={() => {
               changeAccess(true);
               close();
@@ -38,6 +39,7 @@ const TodosLocalStorageModal = ({ close }: TodoModalProps) => {
             <span className="font-bold">erlaube</span> lokales speichern
           </button>
           <button
+            aria-label="verbiete lokales speichern"
             onClick={() => {
               changeAccess(false);
               close();

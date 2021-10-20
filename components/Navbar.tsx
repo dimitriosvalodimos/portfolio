@@ -25,6 +25,7 @@ const Navbar = () => {
         </li>
       </ul>
       <button
+        aria-label="wechsel zwischen hellem und dunklem Design"
         className="p-4 hoverable rounded-lg"
         onClick={() => toggleTheme()}
       >

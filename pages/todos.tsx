@@ -91,6 +91,7 @@ const Todos = () => {
                           {todo?.text}
                         </p>
                         <button
+                          aria-label="entferne ToDo"
                           onClick={() => {
                             removeTodo(todo.id);
                           }}
