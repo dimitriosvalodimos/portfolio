@@ -5,6 +5,7 @@ const Profile = () => {
   return (
     <section className="place-self-center">
       <Image
+        alt="Ein Bild von mir. Braune kurze Haare, grau-blaue Augen, kaukasich."
         src={profilePic}
         width={256}
         height={256}
