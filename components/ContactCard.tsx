@@ -11,7 +11,7 @@ const ContactCard = () => {
           <ImGithub className="text-2xl" />
           <Link href="https://github.com/dimitriosvalodimos">
             <a
-              className="ml-1 default-link"
+              className="ml-1 xs:p-3 default-link"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -23,7 +23,7 @@ const ContactCard = () => {
           <BsLinkedin className="text-2xl" />
           <Link href="https://www.linkedin.com/in/dimitrios-valodimos-5567431bb/">
             <a
-              className="ml-1 default-link"
+              className="ml-1 xs:p-3 default-link"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -34,7 +34,7 @@ const ContactCard = () => {
         <li className="flex justify-left items-center">
           <ImXing className="text-2xl" />
           <Link href="https://www.xing.com/profile/Dimitrios_Valodimos3/cv">
-            <a className="ml-1 default-link" rel="noopener noreferrer">
+            <a className="ml-1 xs:p-3 default-link" rel="noopener noreferrer">
               XING
             </a>
           </Link>
