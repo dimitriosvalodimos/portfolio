@@ -1,8 +1,7 @@
 import { LayoutProps } from '@utils/commonProps';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
-// import Navbar from "@components/Navbar";
-import dynamic from 'next/dynamic';
+import Navbar from '@components/Navbar';
 
 const variants = {
   hidden: { opacity: 0, x: -200, y: 0 },
@@ -11,7 +10,6 @@ const variants = {
 };
 
 const Layout = ({ currentPage, children }: LayoutProps) => {
-  const Navbar = dynamic(() => import('@components/Navbar'));
   return (
     <motion.main
       className="default-transition"
