@@ -25,7 +25,7 @@ const Navbar = () => {
         </li>
       </ul>
       <button
-        className="p-4 hoverable default-transition rounded-lg"
+        className="p-4 hoverable rounded-lg"
         onClick={() => toggleTheme()}
       >
         {theme === 'light' ? (
