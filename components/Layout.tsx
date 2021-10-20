@@ -14,6 +14,7 @@ const Layout = ({ currentPage, children }: LayoutProps) => {
   const Navbar = dynamic(() => import('@components/Navbar'));
   return (
     <motion.main
+      className="default-transition"
       variants={variants}
       initial="hidden"
       animate="enter"
