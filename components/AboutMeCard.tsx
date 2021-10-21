@@ -10,7 +10,7 @@ const AboutMeCard = () => {
   return (
     <div className="place-self-center">
       <p className="font-semibold text-xl default-text">Kurz zu mir:</p>
-      <ul className="text-left leading-relaxed mx-auto">
+      <ul className="text-left leading-loose mx-auto">
         <li>{getAge()} Jahre alt</li>
         <li>
           B.Sc Informatik an der{' '}
