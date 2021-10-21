@@ -53,17 +53,16 @@ const Weather = () => {
         setInputText={setInputText}
         handleSubmission={handleSubmission}
         placeholderText="📍 Eine Stadt deiner Wahl ..."
-      >
-        <div className="flex mt-8 sm:mt-16 justify-center mx-8">
-          {requestStatus === RequestStatus.UNKNOWN && <WeatherCardUnknown />}
-          {requestStatus === RequestStatus.FAILED && <WeatherCardFailed />}
-          {requestStatus === RequestStatus.SUCCESS && (
-            <WeatherCardSuccess
-              data={responseContent as WeatherAPIResponseSuccessStamped}
-            />
-          )}
-        </div>
-      </Inputbar>
+      />
+      <div className="flex mt-8 sm:mt-16 justify-center mx-8">
+        {requestStatus === RequestStatus.UNKNOWN && <WeatherCardUnknown />}
+        {requestStatus === RequestStatus.FAILED && <WeatherCardFailed />}
+        {requestStatus === RequestStatus.SUCCESS && (
+          <WeatherCardSuccess
+            data={responseContent as WeatherAPIResponseSuccessStamped}
+          />
+        )}
+      </div>
     </Layout>
   );
 };

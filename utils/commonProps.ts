@@ -50,7 +50,6 @@ type InputbarProps = {
   setInputText: Dispatch<SetStateAction<string>>;
   handleSubmission: (e: FormEvent<HTMLFormElement>) => void;
   placeholderText: string;
-  children: ReactNode | ReactNode[];
 };
 
 type WeatherAPIResponseSuccess = {
