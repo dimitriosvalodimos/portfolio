@@ -7,7 +7,6 @@ const WeatherCardUnknown = () => {
       className="px-2"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, x: '100%' }}
     >
       Checke die Temperaturen in deiner Nähe!
     </motion.p>
