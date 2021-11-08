@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import profilePic from '../public/images/mountain.jpg';
+import profilePic from '../public/images/vorne_schmal_square.jpg';
 
 const Profile = () => {
   return (
